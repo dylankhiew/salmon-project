@@ -35,12 +35,22 @@ const HeaderSubtitle = styled.div`
 const Header = () => {
   const { theme } = useContext(ThemeContext);
 
-  const subtitleColor = theme === 'light'
+  const isLightTheme = theme === 'light';
+
+  const subtitleColor = isLightTheme
     ? COLOR_CONSTANTS.LIGHT.SUBTITLE
     : COLOR_CONSTANTS.DARK.SUBTITLE;
 
+  const headerColor = isLightTheme
+    ? COLOR_CONSTANTS.LIGHT.BACKGROUND
+    : COLOR_CONSTANTS.DARK.BACKGROUND
+
+  const boxShadowColor = isLightTheme
+    ? '5px 10px 15px -20px #111111'
+    : '0px 15px 10px -15px #111111'
+
   return (
-    <HeaderContainer>
+    <HeaderContainer style={{ backgroundColor: headerColor, boxShadow: boxShadowColor }}>
       <TitleContainer>
         <HeaderTitle>
           サーモン
