@@ -11,7 +11,8 @@ const HeaderContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  margin: ${SPACING.S_2}px;
+  margin-left: ${SPACING.S_2}px;
+  margin-bottom: ${SPACING.S_1}px;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -21,14 +22,14 @@ const HeaderTitle = styled.div`
   color: ${COLOR_CONSTANTS.ACCENT};
   font-family: ${FONT_CONSTANTS.NOTO_SANS}, sans-serif;
   font-weight: 700;
-  font-size: 64px;
+  font-size: 48px;
 `;
 
 const HeaderSubtitle = styled.div`
   color: ${COLOR_CONSTANTS.LIGHT.BACKGROUND};
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS}, sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 12px;
   text-align: left;
 `;
 
