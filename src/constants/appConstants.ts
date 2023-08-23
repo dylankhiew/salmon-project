@@ -1,12 +1,13 @@
 export const COLOR_CONSTANTS = {
   ACCENT: '#FA8072',
+  WHITE: '#ffffff',
   LIGHT: {
-    BACKGROUND: '#E5E5EA',
+    BACKGROUND: '#c7c7cc',
     SUBTITLE: '#1C1C1E',
   },
   DARK: {
     BACKGROUND: '#1C1C1E',
-    SUBTITLE: '#E5E5EA',
+    SUBTITLE: '#c7c7cc',
   },
 };
 
