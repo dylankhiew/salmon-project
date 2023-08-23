@@ -1,4 +1,4 @@
-declare namespace Sushi {
+declare namespace Salmon {
   interface ThemeContext {
     theme: ThemeType;
     setTheme: (theme: ThemeType) => void;

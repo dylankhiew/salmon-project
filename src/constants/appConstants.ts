@@ -17,7 +17,7 @@ export const FONT_CONSTANTS = {
 
 }
 
-export const DEFAULT_THEME_CONTEXT: Sushi.ThemeContext = {
+export const DEFAULT_THEME_CONTEXT: Salmon.ThemeContext = {
   theme: 'light',
-  setTheme: (_theme: Sushi.ThemeType) => {},
+  setTheme: (_theme: Salmon.ThemeType) => {},
 }

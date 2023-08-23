@@ -56,7 +56,7 @@ const Header = () => {
           サーモン
         </HeaderTitle>
         <HeaderSubtitle style={{ color: subtitleColor }}>
-          THE <b>SUSHI</b> PROJECT
+          THE <b>SALMON</b> PROJECT
         </HeaderSubtitle>
       </TitleContainer>
     </HeaderContainer>

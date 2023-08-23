@@ -13,7 +13,7 @@ const MainContainer = styled.div`
 const App = () => {
   const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  const [theme, setTheme] = useState<Sushi.ThemeType>('light');
+  const [theme, setTheme] = useState<Salmon.ThemeType>('light');
 
   const generateThemeStyling = (): React.CSSProperties => {
     if (theme === 'dark') {
