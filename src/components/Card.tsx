@@ -20,7 +20,7 @@ interface CardOwnProps {
 type CardProps = CardOwnProps;
 
 const Card = ({ shouldRotate = true, backgroundColor, children }: PropsWithChildren<CardProps>): JSX.Element => {
-  const randomDegree = getRandomDegrees(8);
+  const randomDegree = getRandomDegrees(6);
   const transform = shouldRotate ? `rotate(${randomDegree}deg)` : `rotate(0deg)`;
 
   return (

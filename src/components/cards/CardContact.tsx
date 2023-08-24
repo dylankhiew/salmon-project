@@ -3,7 +3,7 @@ import Card from "../Card";
 
 const CardContact = () => {
   return (
-    <Card backgroundColor={COLOR_CONSTANTS.ACCENT} shouldRotate={false}>
+    <Card backgroundColor={COLOR_CONSTANTS.OFF_BLACK} shouldRotate={false}>
       
     </Card>
   )

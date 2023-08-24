@@ -68,7 +68,7 @@ const CardProfile = () => {
           <CardImage src={profile} alt="Profile"/>
         </CardImageContainer>
         <CardInfo>
-          More than four years of experience in mobile and software development, specialising in <b>financial services</b>.
+          More than four years of experience in mobile and software development, specialising in the <b>financial services</b> industry.
         </CardInfo>
         <CardInfo>
           Proficient in <b>React Native</b>, <b>TypeScript</b> and <b>Redux</b>.

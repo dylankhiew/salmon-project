@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../../constants/appConstants';
-import Card from '../Card';
 import { SPACING } from '../../constants/spacingConstants';
-import moneylion from '../../assets/moneylion.png';
+import Card from '../Card';
 
 const CardContainer = styled.div`
   height: 95%;
@@ -13,6 +12,7 @@ const CardContainer = styled.div`
 const CardHeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
+  margin-bottom: 18px;
 `
 
 const CardTitleContainer = styled.div`
@@ -26,37 +26,24 @@ const CardTitle = styled.div`
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-size: 28px;
   font-weight: 700;
-  color: ${COLOR_CONSTANTS.OFF_BLACK};
-`
+  color: ${COLOR_CONSTANTS.AEON};
+`;
 
 const CardSubtitle = styled.div`
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-size: 12px;
   font-weight: 300;
-  color: ${COLOR_CONSTANTS.OFF_BLACK};
-`
-const CardImageContainer = styled.div`
-  align-self: center;
-  justify-content: center;
-  padding: ${SPACING.S_2};
-  margin-bottom: 24px;
-`;
-
-const CardImage = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  border: 2px solid ${COLOR_CONSTANTS.DARK.BACKGROUND};
+  color: ${COLOR_CONSTANTS.AEON};
 `;
 
 const CardInfo = styled.div`
-  background-color: ${COLOR_CONSTANTS.WHITE};
-  border-radius: 12px;
+  background-color: ${COLOR_CONSTANTS.LIGHT.BACKGROUND};
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-weight: 300;
   padding: ${SPACING.S_2}px;
   font-size: 12px;
   opacity: 0.7;
+  border-radius: 12px;
   margin-bottom: ${SPACING.S_0}px;
 `;
 
@@ -64,45 +51,41 @@ const CardFooter = styled.div`
   text-align: right;
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-size: 12px;
+  color: ${COLOR_CONSTANTS.AEON};
 `;
 
-const CardExperienceMoneyLion = () => {
+const CardExperienceAEON = () => {
   return (
-    <Card backgroundColor={COLOR_CONSTANTS.MONEYLION}>
+    <Card backgroundColor={COLOR_CONSTANTS.OFF_WHITE}>
       <CardContainer>
         <CardHeaderContainer>
-          <CardImageContainer>
-            <CardImage src={moneylion} alt="Profile"/>
-          </CardImageContainer>
           <CardTitleContainer>
             <CardSubtitle>
-              Mobile Engineer
+              Frontend Engineer
             </CardSubtitle>
             <CardTitle>
-              MoneyLion
+              ACS Digital
             </CardTitle>
           </CardTitleContainer>
         </CardHeaderContainer>
         <CardInfo>
           <b>Summary</b>
           <br></br>
-          Was part of the <b>Crypto</b> and <b>Banking</b> team where I was in charge of certain modules,
-          provided necessary guidance and implemented user stories in an agile environment.
-        </CardInfo>
-        <CardInfo>
-          Gained expensive core React Native knowledge during my time in the R&D team.
+          Part of the pioneers in building the mobile-first digital bank for AEON. Day to day tasks 
+          includes enforcing best practises, building workflows, design system implementation as well as
+          handling pod-related matters in a agile-based team.
         </CardInfo>
         <CardInfo>
           <b>Tech Stack</b>
           <br></br>
-          React Native, TypeScript, Redux, Redux Saga, ReactJS
+          React Native, TypeScript
         </CardInfo>
       </CardContainer>
       <CardFooter>
-        Apr 2021 to Nov 2022
+        Apr 2023 to present
       </CardFooter>
     </Card>
   )
 };
 
-export default CardExperienceMoneyLion;
+export default CardExperienceAEON;

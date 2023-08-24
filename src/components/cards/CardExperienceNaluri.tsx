@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../../constants/appConstants';
 import Card from '../Card';
 import { SPACING } from '../../constants/spacingConstants';
-import moneylion from '../../assets/moneylion.png';
+import naluri from '../../assets/naluri.png';
 
 const CardContainer = styled.div`
   height: 95%;
@@ -26,14 +26,14 @@ const CardTitle = styled.div`
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-size: 28px;
   font-weight: 700;
-  color: ${COLOR_CONSTANTS.OFF_BLACK};
+  color: ${COLOR_CONSTANTS.WHITE};
 `
 
 const CardSubtitle = styled.div`
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-size: 12px;
   font-weight: 300;
-  color: ${COLOR_CONSTANTS.OFF_BLACK};
+  color: ${COLOR_CONSTANTS.WHITE};
 `
 const CardImageContainer = styled.div`
   align-self: center;
@@ -46,11 +46,11 @@ const CardImage = styled.img`
   width: 50px;
   height: 50px;
   border-radius: 100px;
-  border: 2px solid ${COLOR_CONSTANTS.DARK.BACKGROUND};
+  border: 1px solid ${COLOR_CONSTANTS.OFF_WHITE};
 `;
 
 const CardInfo = styled.div`
-  background-color: ${COLOR_CONSTANTS.WHITE};
+  background-color: ${COLOR_CONSTANTS.NALURI_SECONDARY};
   border-radius: 12px;
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-weight: 300;
@@ -64,38 +64,36 @@ const CardFooter = styled.div`
   text-align: right;
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-size: 12px;
+  color: ${COLOR_CONSTANTS.WHITE};
 `;
 
-const CardExperienceMoneyLion = () => {
+const CardExperienceNaluri = () => {
   return (
-    <Card backgroundColor={COLOR_CONSTANTS.MONEYLION}>
+    <Card backgroundColor={COLOR_CONSTANTS.NALURI}>
       <CardContainer>
         <CardHeaderContainer>
           <CardImageContainer>
-            <CardImage src={moneylion} alt="Profile"/>
+            <CardImage src={naluri} alt='Profile'/>
           </CardImageContainer>
           <CardTitleContainer>
             <CardSubtitle>
               Mobile Engineer
             </CardSubtitle>
             <CardTitle>
-              MoneyLion
+              Naluri
             </CardTitle>
           </CardTitleContainer>
         </CardHeaderContainer>
         <CardInfo>
           <b>Summary</b>
           <br></br>
-          Was part of the <b>Crypto</b> and <b>Banking</b> team where I was in charge of certain modules,
-          provided necessary guidance and implemented user stories in an agile environment.
-        </CardInfo>
-        <CardInfo>
-          Gained expensive core React Native knowledge during my time in the R&D team.
+          During my time in the mobile team, we worked on a roadmap initiative which includes a major design overhaul, enforcing TypeScript
+          as well as implementing Relay as the new state management framework.
         </CardInfo>
         <CardInfo>
           <b>Tech Stack</b>
           <br></br>
-          React Native, TypeScript, Redux, Redux Saga, ReactJS
+          React Native, TypeScript, Redux, Relay
         </CardInfo>
       </CardContainer>
       <CardFooter>
@@ -105,4 +103,4 @@ const CardExperienceMoneyLion = () => {
   )
 };
 
-export default CardExperienceMoneyLion;
+export default CardExperienceNaluri;
