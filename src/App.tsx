@@ -7,6 +7,12 @@ import Header from './components/Header';
 import CardStacks from './components/CardStacks';
 import './App.css';
 import background from './assets/background.jpg';
+import CardContact from './components/cards/CardContact';
+
+const MainContainer = styled.div`
+  overflow: hidden;
+  position: relative;
+`;
 
 const BackgroundImage = styled.div`
   background-image: url(${background});
@@ -17,12 +23,17 @@ const BackgroundImage = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
-  opacity: 0.1;
+  opacity: 0.13;
 `;
 
-const MainContainer = styled.div`
-  overflow: hidden;
-  position: relative;
+const CardContactContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
 `;
 
 const App = () => {
@@ -89,6 +100,9 @@ const App = () => {
       <MainContainer style={generateThemeStyling()}>
         <BackgroundImage />
         <Header />
+        <CardContactContainer>
+          <CardContact />
+        </CardContactContainer>
         <CardStacks />
       </MainContainer>
     </ThemeContext.Provider>
