@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { ThemeContext } from './contexts/themeContext';
@@ -28,7 +28,6 @@ const MainContainer = styled.div`
 const App = () => {
   const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
   const themeColor = document.querySelector('meta[name="theme-color"]');
-  const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   const [theme, setTheme] = useState<Salmon.ThemeType>('light');
 
@@ -44,15 +43,19 @@ const App = () => {
     }
   };
 
-  const updateColorScheme = () => {
+  const updateColorScheme = useCallback(() => {
+    const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
     const themeColor: Salmon.ThemeType = isPreferDark
       ? 'dark'
       : 'light';
 
     setTheme(themeColor);
-  }
+  }, []);
 
   useEffect(() => {
+    const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
     // Initialise listener
     colorSchemeQuery.addEventListener('change', updateColorScheme);
 
@@ -70,7 +73,7 @@ const App = () => {
       themeColor.setAttribute('content', updatedColor);
     }
     setTheme(themePreference);
-  }, [themeColor]);
+  }, [colorSchemeQuery, themeColor, updateColorScheme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
