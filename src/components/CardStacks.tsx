@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import TinderCard from 'react-tinder-card'
 
-import { useContext } from 'react';
-import { ThemeContext } from '../contexts/themeContext';
-import { getRandomDegrees } from '../utils/appUtils';
 import CardFront from './cards/CardFront';
 import CardIntro from './cards/CardIntro';
 import CardExperienceOne from './cards/CardExperienceOne';
@@ -34,8 +31,6 @@ const CARD_STACK: JSX.Element[] = [
 ];
 
 const CardStacks = () => {
-    const { theme } = useContext(ThemeContext);
-
     const renderCard = (item: JSX.Element, index: number, items: JSX.Element[]) => {
         const isFirst = index === 0;
         const preventSwipe = isFirst ? ['up', 'down', 'left', 'right'] : [];

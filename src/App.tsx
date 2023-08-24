@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { ThemeContext } from './contexts/themeContext';
 import { COLOR_CONSTANTS } from './constants/appConstants';
 import Header from './components/Header';
-import ThemeButton from './components/ThemeButton';
 import CardStacks from './components/CardStacks';
 import './App.css';
 import background from './assets/background.jpg';
@@ -57,7 +56,6 @@ const App = () => {
         <BackgroundImage />
         <Header />
         <CardStacks />
-        <ThemeButton />
       </MainContainer>
     </ThemeContext.Provider>
   );
