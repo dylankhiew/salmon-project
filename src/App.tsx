@@ -63,11 +63,8 @@ const App = () => {
 
   useEffect(() => {
     // Handles theme metadata
-    const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      // Set theme color
       if (documentThemeColor) {
-        const updatedColor = isPreferDark
+        const updatedColor = theme === 'dark'
           ? COLOR_CONSTANTS.DARK.BACKGROUND
           : COLOR_CONSTANTS.LIGHT.BACKGROUND;
   
