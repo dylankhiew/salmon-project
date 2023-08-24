@@ -77,6 +77,7 @@ const App = () => {
           documentThemeColor.setAttribute('content', updatedColor);
       }
       setTheme(themePreference);
+      setHasUserToggle(false);
     }
   }, [colorSchemeQuery, documentThemeColor, hasUserToggle, updateColorScheme]);
 
