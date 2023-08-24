@@ -51,6 +51,7 @@ const CardInfo = styled.a`
   display: flex;
   align-content: center;
   flex-direction: row;
+  text-decoration: none;
 `;
 
 const CardInfoText = styled.div`
@@ -58,7 +59,6 @@ const CardInfoText = styled.div`
   flex: 1;
   font-size: 14px;
   font-weight: 500;
-  text-decoration: none;
 `
 
 const CardFooter = styled.a`
