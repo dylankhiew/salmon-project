@@ -27,6 +27,7 @@ const MainContainer = styled.div`
 
 const App = () => {
   const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeColor = document.querySelector('meta[name="theme-color"]');
 
   const [theme, setTheme] = useState<Salmon.ThemeType>('light');
 
@@ -47,8 +48,17 @@ const App = () => {
     document.body.style.overflow = "hidden";
 
     const themePreference = isBrowserDefaultDark() ? 'dark' : 'light';
+
+    // Set theme color
+    if (themeColor) {
+      const updatedColor = themePreference === 'dark'
+        ? COLOR_CONSTANTS.DARK.BACKGROUND
+        : COLOR_CONSTANTS.LIGHT.BACKGROUND;
+
+      themeColor.setAttribute('content', updatedColor);
+    }
     setTheme(themePreference);
-  }, []);
+  }, [themeColor]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
