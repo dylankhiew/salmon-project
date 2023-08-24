@@ -5,7 +5,7 @@ import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
 
 import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../constants/appConstants';
 import { ThemeContext } from '../contexts/themeContext';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { SPACING } from '../constants/spacingConstants';
 
 const HeaderContainer = styled.div`
@@ -52,7 +52,7 @@ const HeaderToggle = styled.div`
 `
 
 const Header = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme, setHasUserToggle } = useContext(ThemeContext);
 
   const isLightTheme = theme === 'light';
 
@@ -70,6 +70,7 @@ const Header = () => {
 
   const handleOnClick = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
+    setHasUserToggle(true);
   };
 
   return (
@@ -86,7 +87,8 @@ const Header = () => {
       </div>
       <HeaderToggle>
         <Toggle
-          defaultChecked={theme !== 'dark'}
+          onChange={() => {}}
+          checked={theme === 'dark'}
           icons={{
             checked: <BsFillMoonFill size={12} color="white" />,
             unchecked: <BsFillSunFill size={12} color="white" />

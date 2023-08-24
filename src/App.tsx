@@ -27,9 +27,10 @@ const MainContainer = styled.div`
 
 const App = () => {
   const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const documentThemeColor = document.querySelector('meta[name="theme-color"]');
 
   const [theme, setTheme] = useState<Salmon.ThemeType>('light');
+  const [hasUserToggle, setHasUserToggle] = useState<boolean>(false);
 
   const generateThemeStyling = (): React.CSSProperties => {
     if (theme === 'dark') {
@@ -46,37 +47,41 @@ const App = () => {
   const updateColorScheme = useCallback(() => {
     const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    const themeColor: Salmon.ThemeType = isPreferDark
+    const updatedColor: Salmon.ThemeType = isPreferDark
       ? 'dark'
       : 'light';
 
-    setTheme(themeColor);
+    setTheme(updatedColor);
   }, []);
 
   useEffect(() => {
-    const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // Set unscrollable
+      document.body.style.overflow = "hidden";
+  }, []);
 
-    // Initialise listener
-    colorSchemeQuery.addEventListener('change', updateColorScheme);
+  useEffect(() => {
+    if (!hasUserToggle) {
+      const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    // Set unscrollable
-    document.body.style.overflow = "hidden";
-
-    const themePreference = isPreferDark ? 'dark' : 'light';
-
-    // Set theme color
-    if (themeColor) {
-      const updatedColor = themePreference === 'dark'
-        ? COLOR_CONSTANTS.DARK.BACKGROUND
-        : COLOR_CONSTANTS.LIGHT.BACKGROUND;
-
-      themeColor.setAttribute('content', updatedColor);
+      // Initialise listener
+      colorSchemeQuery.addEventListener('change', updateColorScheme);
+  
+      const themePreference = isPreferDark ? 'dark' : 'light';
+  
+      // Set theme color
+      if (documentThemeColor) {
+        const updatedColor = themePreference === 'dark'
+          ? COLOR_CONSTANTS.DARK.BACKGROUND
+          : COLOR_CONSTANTS.LIGHT.BACKGROUND;
+  
+          documentThemeColor.setAttribute('content', updatedColor);
+      }
+      setTheme(themePreference);
     }
-    setTheme(themePreference);
-  }, [colorSchemeQuery, themeColor, updateColorScheme]);
+  }, [colorSchemeQuery, documentThemeColor, hasUserToggle, updateColorScheme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, hasUserToggle, setHasUserToggle }}>
       <MainContainer style={generateThemeStyling()}>
         <BackgroundImage />
         <Header />
