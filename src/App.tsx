@@ -26,8 +26,9 @@ const MainContainer = styled.div`
 `;
 
 const App = () => {
-  const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
   const themeColor = document.querySelector('meta[name="theme-color"]');
+  const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   const [theme, setTheme] = useState<Salmon.ThemeType>('light');
 
@@ -43,11 +44,22 @@ const App = () => {
     }
   };
 
+  const updateColorScheme = () => {
+    const themeColor: Salmon.ThemeType = isPreferDark
+      ? 'dark'
+      : 'light';
+
+    setTheme(themeColor);
+  }
+
   useEffect(() => {
+    // Initialise listener
+    colorSchemeQuery.addEventListener('change', updateColorScheme);
+
     // Set unscrollable
     document.body.style.overflow = "hidden";
 
-    const themePreference = isBrowserDefaultDark() ? 'dark' : 'light';
+    const themePreference = isPreferDark ? 'dark' : 'light';
 
     // Set theme color
     if (themeColor) {
