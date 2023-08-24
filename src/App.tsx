@@ -62,6 +62,7 @@ const App = () => {
   }, [colorSchemeQuery, updateColorScheme]);
 
   useEffect(() => {
+    // Handles theme metadata
     const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
       // Set theme color
@@ -72,9 +73,10 @@ const App = () => {
   
           documentThemeColor.setAttribute('content', updatedColor);
       }
-  })
+  }, [documentThemeColor, theme]);
 
   useEffect(() => {
+    // Handles theme change
     if (!hasUserToggle) {
       const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
