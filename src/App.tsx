@@ -57,14 +57,13 @@ const App = () => {
   useEffect(() => {
       // Set unscrollable
       document.body.style.overflow = "hidden";
-  }, []);
+      // Initialise listener
+      colorSchemeQuery.addEventListener('change', updateColorScheme);
+  }, [colorSchemeQuery, updateColorScheme]);
 
   useEffect(() => {
     if (!hasUserToggle) {
       const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      // Initialise listener
-      colorSchemeQuery.addEventListener('change', updateColorScheme);
   
       const themePreference = isPreferDark ? 'dark' : 'light';
   
@@ -79,7 +78,7 @@ const App = () => {
       setTheme(themePreference);
       setHasUserToggle(false);
     }
-  }, [colorSchemeQuery, documentThemeColor, hasUserToggle, updateColorScheme]);
+  }, [documentThemeColor, hasUserToggle]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, hasUserToggle, setHasUserToggle }}>
