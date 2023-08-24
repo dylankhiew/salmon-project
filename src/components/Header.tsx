@@ -75,9 +75,9 @@ const Header = () => {
 
     // Set theme color
     if (documentThemeColor) {
-      const updatedColor = isLightTheme
-        ? COLOR_CONSTANTS.LIGHT.BACKGROUND
-        : COLOR_CONSTANTS.DARK.BACKGROUND;
+      const updatedColor = theme === 'dark'
+        ? COLOR_CONSTANTS.DARK.BACKGROUND
+        : COLOR_CONSTANTS.LIGHT.BACKGROUND;
 
         documentThemeColor.setAttribute('content', updatedColor);
     }
