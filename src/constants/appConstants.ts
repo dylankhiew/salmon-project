@@ -1,5 +1,6 @@
 export const COLOR_CONSTANTS = {
   ACCENT: '#FA8072',
+  DARK_SALMON: '#c85a53',
   WHITE: '#ffffff',
   LIGHT: {
     BACKGROUND: '#E5E5EA',

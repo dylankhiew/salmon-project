@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 import TinderCard from 'react-tinder-card'
 
-import { COLOR_CONSTANTS } from '../constants/appConstants';
 import { useContext } from 'react';
 import { ThemeContext } from '../contexts/themeContext';
 import { getRandomDegrees } from '../utils/appUtils';
+import CardFront from './cards/CardFront';
+import CardIntro from './cards/CardIntro';
+import CardExperienceOne from './cards/CardExperienceOne';
+import CardContact from './cards/CardContact';
+import CardExperienceThree from './cards/CardExperienceThree';
+import CardExperienceTwo from './cards/CardExperienceTwo';
 
 const CardsContainer = styled.div`
   display: flex;
@@ -18,37 +23,31 @@ const CardsContainer = styled.div`
   align-self: center;
 `;
 
-const Card = styled.div`
-  height: 400px;
-  width: 300px;
-  background-color: ${COLOR_CONSTANTS.LIGHT.BACKGROUND};
-  position: relative;
-  border-radius: 16px;
-`;
-
-const CARD_STACK = [
-  {},
-  {},
-  {},
-  {},
-  {},
+// Front card should be last
+const CARD_STACK: JSX.Element[] = [
+    <CardContact />,
+    <CardExperienceThree />,
+    <CardExperienceTwo />,
+    <CardExperienceOne />,
+    <CardIntro />,
+    <CardFront />,
 ];
 
 const CardStacks = () => {
     const { theme } = useContext(ThemeContext);
 
-    const renderCard = (item: any, index: number) => {
-        const isDarkTheme = theme === 'dark';
-        const isFirstItem = index === 0;
-        const randomDegree = getRandomDegrees(12);
-    
-        const transform = !isFirstItem ? `rotate(${randomDegree}deg)` : 'rotate(0deg)';
-        const backgroundColor = isDarkTheme
-            ?  `rgb(${10 * index}, ${10 * index}, ${10 * index})`
-            :   `rgb(${50 * index}, ${50 * index}, ${50 * index})`;
+    const renderCard = (item: JSX.Element, index: number, items: JSX.Element[]) => {
+        const isFirst = index === 0;
+        const preventSwipe = isFirst ? ['up', 'down', 'left', 'right'] : [];
+
         return (
-            <TinderCard onSwipe={() => {}} className='swipe'>
-                <Card style={{ transform, backgroundColor }} />
+            <TinderCard
+                key={`card-stack-${index + 1}`}
+                onSwipe={() => {}}
+                className='swipe'
+                preventSwipe={preventSwipe}
+            >
+                {item}
             </TinderCard>
         );
     };
