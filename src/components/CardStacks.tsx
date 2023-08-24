@@ -4,6 +4,7 @@ import TinderCard from 'react-tinder-card'
 import { COLOR_CONSTANTS } from '../constants/appConstants';
 import { useContext } from 'react';
 import { ThemeContext } from '../contexts/themeContext';
+import { getRandomDegrees } from '../utils/appUtils';
 
 const CardsContainer = styled.div`
   display: flex;
@@ -38,10 +39,10 @@ const CardStacks = () => {
 
     const renderCard = (item: any, index: number) => {
         const isDarkTheme = theme === 'dark';
-    
         const isFirstItem = index === 0;
+        const randomDegree = getRandomDegrees(12);
     
-        const transform = !isFirstItem ? `rotate(${3 * index}deg)` : 'rotate(0deg)';
+        const transform = !isFirstItem ? `rotate(${randomDegree}deg)` : 'rotate(0deg)';
         const backgroundColor = isDarkTheme
             ?  `rgb(${10 * index}, ${10 * index}, ${10 * index})`
             :   `rgb(${50 * index}, ${50 * index}, ${50 * index})`;
