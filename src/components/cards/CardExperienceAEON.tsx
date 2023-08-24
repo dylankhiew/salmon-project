@@ -73,7 +73,7 @@ const CardExperienceAEON = () => {
           <br></br>
           Part of the pioneers in building the mobile-first digital bank for AEON. Day to day tasks 
           includes enforcing best practises, building workflows, design system implementation as well as
-          handling pod-related matters in a agile-based team.
+          handling pod-related matters in an agile-based team.
         </CardInfo>
         <CardInfo>
           <b>Tech Stack</b>
