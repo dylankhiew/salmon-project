@@ -13,6 +13,7 @@ const HeaderContainer = styled.div`
   position: fixed;
   width: 100vw;
   flex-direction: row;
+  z-index: 1000;
 `;
 
 const TitleContainer = styled.div`
