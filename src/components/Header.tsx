@@ -53,6 +53,7 @@ const HeaderToggle = styled.div`
 
 const Header = () => {
   const { theme, setTheme, setHasUserToggle } = useContext(ThemeContext);
+  const documentThemeColor = document.querySelector('meta[name="theme-color"]');
 
   const isLightTheme = theme === 'light';
 
@@ -71,6 +72,15 @@ const Header = () => {
   const handleOnClick = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
     setHasUserToggle(true);
+
+    // Set theme color
+    if (documentThemeColor) {
+      const updatedColor = isLightTheme
+        ? COLOR_CONSTANTS.LIGHT.BACKGROUND
+        : COLOR_CONSTANTS.DARK.BACKGROUND;
+
+        documentThemeColor.setAttribute('content', updatedColor);
+    }
   };
 
   return (
