@@ -43,10 +43,7 @@ const CardImage = styled.img`
 
 const CardFront = () => {
   return (
-    <Card
-      backgroundColor={COLOR_CONSTANTS.DARK_SALMON}
-      shouldRotate={false}
-    >
+    <Card backgroundColor={COLOR_CONSTANTS.DARK_SALMON}>
       <CardContainer>
         <CardTitleContainer>
           <CardTitle>

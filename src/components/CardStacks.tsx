@@ -26,8 +26,8 @@ const CARD_STACK: JSX.Element[] = [
     <CardExperienceThree />,
     <CardExperienceTwo />,
     <CardExperienceOne />,
-    <CardIntro />,
     <CardFront />,
+    <CardIntro />,
 ];
 
 const CardStacks = () => {
