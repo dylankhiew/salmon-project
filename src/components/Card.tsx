@@ -9,6 +9,7 @@ const CardContainer = styled.div`
   position: relative;
   border-radius: 16px;
   padding: ${SPACING.S_2}px;
+  border: 0.2px solid rgba(0,0,0,0.2);
 `;
 
 interface CardOwnProps {
