@@ -5,7 +5,7 @@ import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
 
 import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../constants/appConstants';
 import { ThemeContext } from '../contexts/themeContext';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { SPACING } from '../constants/spacingConstants';
 
 const HeaderContainer = styled.div`
