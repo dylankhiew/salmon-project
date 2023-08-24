@@ -62,19 +62,24 @@ const App = () => {
   }, [colorSchemeQuery, updateColorScheme]);
 
   useEffect(() => {
-    if (!hasUserToggle) {
-      const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-      const themePreference = isPreferDark ? 'dark' : 'light';
-  
+    const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
       // Set theme color
       if (documentThemeColor) {
-        const updatedColor = themePreference === 'dark'
+        const updatedColor = isPreferDark
           ? COLOR_CONSTANTS.DARK.BACKGROUND
           : COLOR_CONSTANTS.LIGHT.BACKGROUND;
   
           documentThemeColor.setAttribute('content', updatedColor);
       }
+  })
+
+  useEffect(() => {
+    if (!hasUserToggle) {
+      const isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+      const themePreference = isPreferDark ? 'dark' : 'light';
+
       setTheme(themePreference);
       setHasUserToggle(false);
     }
