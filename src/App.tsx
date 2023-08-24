@@ -7,9 +7,23 @@ import Header from './components/Header';
 import ThemeButton from './components/ThemeButton';
 import CardStacks from './components/CardStacks';
 import './App.css';
+import background from './assets/background.jpg';
+
+const BackgroundImage = styled.div`
+  background-image: url(${background});
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.1;
+`;
 
 const MainContainer = styled.div`
   overflow: hidden;
+  position: relative;
 `;
 
 const App = () => {
@@ -40,6 +54,7 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <MainContainer style={generateThemeStyling()}>
+        <BackgroundImage />
         <Header />
         <CardStacks />
         <ThemeButton />
