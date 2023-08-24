@@ -11,15 +11,13 @@ const CardContainer = styled.div`
 `;
 
 const CardTitleContainer = styled.div`
-  
 `
 
 const CardTitle = styled.div`
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-size: 32px;
-  font-weight: 600;
+  font-weight: 500;
   color: ${COLOR_CONSTANTS.LIGHT.BACKGROUND};
-  text-transform: uppercase;
 `
 
 const CardSubtitle = styled.div`
@@ -29,36 +27,58 @@ const CardSubtitle = styled.div`
   color: ${COLOR_CONSTANTS.LIGHT.BACKGROUND};
 `
 const CardImageContainer = styled.div`
-  flex: 1;
-  margin-top: 48px;
+  margin-top: 32px;
   align-self: center;
   padding: ${SPACING.S_2};
+  margin-bottom: 24px;
 `;
 
 const CardImage = styled.img`
-  width: 150px;
-  height: 150px;
+  opacity: 0.9;
+  width: 120px;
+  height: 120px;
   border-radius: 100px;
+  border: 1px solid ${COLOR_CONSTANTS.LIGHT.BACKGROUND};
 `;
 
-const CardFront = () => {
+const CardInfo = styled.div`
+  background-color: ${COLOR_CONSTANTS.WHITE};
+  border-radius: 12px;
+  font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
+  font-weight: 300;
+  padding: ${SPACING.S_2}px;
+  font-size: 12px;
+  opacity: 0.4;
+  margin-bottom: ${SPACING.S_0}px;
+`;
+
+const CardProfile = () => {
   return (
     <Card backgroundColor={COLOR_CONSTANTS.DARK_SALMON}>
       <CardContainer>
         <CardTitleContainer>
+          <CardSubtitle>
+            Who this?
+          </CardSubtitle>
           <CardTitle>
             Dylan Khiew
           </CardTitle>
-          <CardSubtitle>
-            Mobile Engineer
-          </CardSubtitle>
         </CardTitleContainer>
         <CardImageContainer>
           <CardImage src={profile} alt="Profile"/>
         </CardImageContainer>
+        <CardInfo>
+          More than four years of experience in mobile and software development, specialising in <b>financial services</b>.
+        </CardInfo>
+        <CardInfo>
+          Proficient in <b>React Native</b>, <b>TypeScript</b> and <b>Redux</b>.
+        </CardInfo>
+        <CardInfo>
+          Hates raw salmon as much as bad codes.
+        </CardInfo>
       </CardContainer>
     </Card>
   )
 };
 
-export default CardFront;
+export default CardProfile;

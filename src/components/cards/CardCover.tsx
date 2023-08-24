@@ -54,7 +54,7 @@ const CardFooter = styled.div`
   margin-bottom: ${SPACING.S_1}px;
 `;
 
-const CardIntro = () => {
+const CardCover = () => {
   return (
     <Card backgroundColor={COLOR_CONSTANTS.LIGHT_SALMON} shouldRotate={false}>
         <CardContainer>
@@ -77,5 +77,5 @@ const CardIntro = () => {
   )
 };
 
-export default CardIntro;
+export default CardCover;
 

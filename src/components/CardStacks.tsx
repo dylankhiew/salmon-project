@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import TinderCard from 'react-tinder-card'
 
-import CardFront from './cards/CardFront';
-import CardIntro from './cards/CardIntro';
-import CardExperienceOne from './cards/CardExperienceOne';
 import CardContact from './cards/CardContact';
 import CardExperienceThree from './cards/CardExperienceThree';
 import CardExperienceTwo from './cards/CardExperienceTwo';
+import CardCover from './cards/CardCover';
+import CardProfile from './cards/CardProfile';
+import CardExperienceMoneyLion from './cards/CardExperienceMoneyLion';
 
 const CardsContainer = styled.div`
   display: flex;
@@ -25,9 +25,9 @@ const CARD_STACK: JSX.Element[] = [
     <CardContact />,
     <CardExperienceThree />,
     <CardExperienceTwo />,
-    <CardExperienceOne />,
-    <CardFront />,
-    <CardIntro />,
+    <CardExperienceMoneyLion />,
+    <CardProfile />,
+    <CardCover />,
 ];
 
 const CardStacks = () => {
