@@ -73,30 +73,12 @@ const CardStacks = () => {
         updateCurrentIndex(index - 1);
     };
 
-    const renderCard = (
-        item: JSX.Element,
-        index: number,
-    ) => {
-        return (
-            <TinderCard
-                ref={childRefs[index]}
-                key={`card-stack-${index + 1}`}
-                onSwipe={() => handleOnSwipe(index)}
-                className='swipe'
-            >
-                {item}
-            </TinderCard>
-        );
-    };
-
     const handleGoBack = async () => {
         if (canGoBack) {
             const newIndex = currentIndex + 1;
             updateCurrentIndex(newIndex);
 
-            if (childRefs && newIndex) {
-                await childRefs[newIndex].current.restoreCard();
-            }
+            await childRefs[newIndex].current.restoreCard();
         }
     }
 
@@ -111,6 +93,22 @@ const CardStacks = () => {
                 </BackButton>
             );
         }
+    };
+
+    const renderCard = (
+        item: JSX.Element,
+        index: number,
+    ) => {
+        return (
+            <TinderCard
+                ref={childRefs[index]}
+                key={`card-stack-${index + 1}`}
+                onSwipe={() => handleOnSwipe(index)}
+                className='swipe'
+            >
+                {item}
+            </TinderCard>
+        );
     };
 
     return (
