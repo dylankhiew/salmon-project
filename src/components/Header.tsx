@@ -10,19 +10,24 @@ import { SPACING } from '../constants/spacingConstants';
 
 const HeaderContainer = styled.div`
   display: flex;
+  flex: 1;
   position: fixed;
-  width: 100vw;
   flex-direction: row;
   z-index: 1000;
+  width: 100vw;
 `;
 
+const MainTitleContainer = styled.div`
+  display: flex;
+  flex: 1;
+`
+
 const TitleContainer = styled.div`
-  margin-left: ${SPACING.S_2}px;
+  width: 70vw;
+  margin-left: ${SPACING.S_5}px;
   margin-right: ${SPACING.S_2}px;
   margin-bottom: ${SPACING.S_2}px;
-  display: flex;
   flex-direction: column;
-  width: 70vw;
 `
 
 const HeaderTitle = styled.div`
@@ -41,13 +46,14 @@ const HeaderSubtitle = styled.div`
 `;
 
 const HeaderToggle = styled.div`
-  right: 0;
+  display: flex;
   flex: 1;
-  justify-content: end;
+  justify-content: flex-end;
+  justify-items: flex-end;
+  justify-self: flex-end;
   align-self: center;
   align-items: center;
   margin-right: 48px;
-  width: 30vh;
   opacity: 0.8;
 `
 
@@ -75,7 +81,7 @@ const Header = () => {
 
   return (
     <HeaderContainer style={{ backgroundColor: headerColor, boxShadow: boxShadowColor }}>
-      <div>
+      <MainTitleContainer>
         <TitleContainer>
           <HeaderTitle>
             サーモン
@@ -83,8 +89,8 @@ const Header = () => {
           <HeaderSubtitle style={{ color: subtitleColor }}>
             The <b>Salmon</b> Project
           </HeaderSubtitle>
-      </TitleContainer>
-      </div>
+        </TitleContainer>
+      </MainTitleContainer>
       <HeaderToggle>
         <Toggle
           onChange={() => {}}

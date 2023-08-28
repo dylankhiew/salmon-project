@@ -12,6 +12,8 @@ import CardContact from './components/cards/CardContact';
 const MainContainer = styled.div`
   overflow: hidden;
   position: relative;
+  user-select: none;
+  overscroll-behavior: contain;
 `;
 
 const BackgroundImage = styled.div`
