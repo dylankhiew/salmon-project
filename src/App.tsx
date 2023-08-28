@@ -2,17 +2,20 @@ import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { ThemeContext } from './contexts/themeContext';
-import { COLOR_CONSTANTS } from './constants/appConstants';
 import Header from './components/Header';
 import CardStacks from './components/CardStacks';
 import './App.css';
 import background from './assets/background.jpg';
 import CardContact from './components/cards/CardContact';
+import { COLOR_CONSTANTS } from './constants/colorConstants';
 
 const MainContainer = styled.div`
   overflow: hidden;
   position: relative;
   user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
   overscroll-behavior: contain;
 `;
 

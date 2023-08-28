@@ -1,8 +1,9 @@
-import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../../constants/appConstants';
 import Card from '../Card';
 import salmon from '../../assets/salmon-icon.png';
 import { styled } from 'styled-components';
 import { SPACING } from '../../constants/spacingConstants';
+import { COLOR_CONSTANTS } from '../../constants/colorConstants';
+import { FONT_CONSTANTS } from '../../constants/fontConstants';
 
 const Image = styled.img`
   width: 150px;

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
-import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../../constants/appConstants';
+
 import Card from '../Card';
 import { SPACING } from '../../constants/spacingConstants';
 import moneylion from '../../assets/moneylion.png';
+import { COLOR_CONSTANTS } from '../../constants/colorConstants';
+import { FONT_CONSTANTS } from '../../constants/fontConstants';
 
 const CardContainer = styled.div`
   height: 95%;

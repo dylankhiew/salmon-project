@@ -3,10 +3,11 @@ import Toggle from 'react-toggle';
 import 'react-toggle/style.css';
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
 
-import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../constants/appConstants';
 import { ThemeContext } from '../contexts/themeContext';
 import { useContext } from 'react';
 import { SPACING } from '../constants/spacingConstants';
+import { COLOR_CONSTANTS } from '../constants/colorConstants';
+import { FONT_CONSTANTS } from '../constants/fontConstants';
 
 const HeaderContainer = styled.div`
   display: flex;

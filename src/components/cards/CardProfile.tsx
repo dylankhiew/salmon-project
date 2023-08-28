@@ -1,8 +1,10 @@
 import styled from 'styled-components';
-import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../../constants/appConstants';
+
+import { CARD_STACK_CONFIG } from '../../constants/appConstants';
 import Card from '../Card';
-import profile from '../../assets/profile.jpeg';
 import { SPACING } from '../../constants/spacingConstants';
+import { COLOR_CONSTANTS } from '../../constants/colorConstants';
+import { FONT_CONSTANTS } from '../../constants/fontConstants';
 
 const CardContainer = styled.div`
   height: 100%;
@@ -65,7 +67,10 @@ const CardProfile = () => {
           </CardTitle>
         </CardTitleContainer>
         <CardImageContainer>
-          <CardImage src={profile} alt="Profile"/>
+          <CardImage
+            src={CARD_STACK_CONFIG.PROFILE_IMAGE_URL}
+            alt="Profile"
+          />
         </CardImageContainer>
         <CardInfo>
           More than four years of experience in mobile and software development, specialising in the <b>financial services</b> industry.

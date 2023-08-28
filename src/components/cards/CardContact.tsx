@@ -1,11 +1,13 @@
 import styled from 'styled-components';
-import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../../constants/appConstants';
+
 import Card from '../Card';
 import { SPACING } from '../../constants/spacingConstants';
 import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/themeContext';
 import cv from '../../assets/cv.pdf';
 import { BsEnvelopeAtFill, BsGithub, BsLinkedin, BsWhatsapp } from 'react-icons/bs';
+import { COLOR_CONSTANTS } from '../../constants/colorConstants';
+import { FONT_CONSTANTS } from '../../constants/fontConstants';
 
 const CardContainer = styled.div`
   height: 95%;

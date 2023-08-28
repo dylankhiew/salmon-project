@@ -1,30 +1,7 @@
-export const COLOR_CONSTANTS = {
-  ACCENT: '#FA8072',
-  DARK_SALMON: '#c85a53',
-  LIGHT_SALMON: '#ffb592',
-  WHITE: '#ffffff',
-  OFF_BLACK: '#2C2C2E',
-  OFF_WHITE: '#D1D1D6',
-  GRAY: '#3A3A3C',
-  MONEYLION: '#00e5c4',
-  AEON: '#EF24B8',
-  NALURI: '#4ab1bd',
-  NALURI_SECONDARY: '#c8e7eb',
-  LIGHT: {
-    BACKGROUND: '#E5E5EA',
-    SUBTITLE: '#1C1C1E',
-  },
-  DARK: {
-    BACKGROUND: '#1C1C1E',
-    SUBTITLE: '#E5E5EA',
-  },
+export const CARD_STACK_CONFIG = {
+  MAX_TILT_DEGREES: 6,
+  PROFILE_IMAGE_URL: 'https://media.licdn.com/dms/image/C4D03AQG0XccET2WPkQ/profile-displayphoto-shrink_800_800/0/1601386159582?e=1698883200&v=beta&t=7xJyk0kG9xoCcpy79hagwgoGZHYxf9mBkzlG8PfGWro',
 };
-
-export const FONT_CONSTANTS = {
-  NOTO_SANS: 'Noto Sans JP',
-  PLUS_JAKARTA_SANS: 'Plus Jakarta Sans',
-
-}
 
 export const DEFAULT_THEME_CONTEXT: Salmon.ThemeContext = {
   theme: 'light',

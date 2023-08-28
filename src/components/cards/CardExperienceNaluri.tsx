@@ -1,8 +1,10 @@
 import styled from 'styled-components';
-import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../../constants/appConstants';
+
 import Card from '../Card';
 import { SPACING } from '../../constants/spacingConstants';
 import naluri from '../../assets/naluri.png';
+import { COLOR_CONSTANTS } from '../../constants/colorConstants';
+import { FONT_CONSTANTS } from '../../constants/fontConstants';
 
 const CardContainer = styled.div`
   height: 95%;
@@ -93,11 +95,11 @@ const CardExperienceNaluri = () => {
         <CardInfo>
           <b>Tech Stack</b>
           <br></br>
-          React Native, TypeScript, Redux, Relay
+          React Native, TypeScript, Redux, Relay, GraphQL
         </CardInfo>
       </CardContainer>
       <CardFooter>
-        Apr 2021 to Nov 2022
+        Nov 2022 to Mar 2023
       </CardFooter>
     </Card>
   )

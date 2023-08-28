@@ -1,7 +1,11 @@
 import styled from 'styled-components';
-import { COLOR_CONSTANTS, FONT_CONSTANTS } from '../../constants/appConstants';
+
 import { SPACING } from '../../constants/spacingConstants';
 import Card from '../Card';
+import { useContext } from 'react';
+import { ThemeContext } from '../../contexts/themeContext';
+import { FONT_CONSTANTS } from '../../constants/fontConstants';
+import { COLOR_CONSTANTS } from '../../constants/colorConstants';
 
 const CardContainer = styled.div`
   height: 95%;
@@ -26,7 +30,6 @@ const CardTitle = styled.div`
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-size: 28px;
   font-weight: 700;
-  color: ${COLOR_CONSTANTS.AEON};
 `;
 
 const CardSubtitle = styled.div`
@@ -51,19 +54,28 @@ const CardFooter = styled.div`
   text-align: right;
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
   font-size: 12px;
-  color: ${COLOR_CONSTANTS.AEON};
 `;
 
 const CardExperienceAEON = () => {
+  const { theme } = useContext(ThemeContext);
+
+  const backgroundColor = theme === 'light'
+    ? COLOR_CONSTANTS.AEON
+    : COLOR_CONSTANTS.OFF_WHITE;
+
+  const color = theme === 'light'
+    ? COLOR_CONSTANTS.WHITE
+    : COLOR_CONSTANTS.AEON;
+
   return (
-    <Card backgroundColor={COLOR_CONSTANTS.OFF_WHITE}>
+    <Card backgroundColor={backgroundColor}>
       <CardContainer>
         <CardHeaderContainer>
           <CardTitleContainer>
-            <CardSubtitle>
+            <CardSubtitle style={{ color }}>
               Frontend Engineer
             </CardSubtitle>
-            <CardTitle>
+            <CardTitle style={{ color }}>
               ACS Digital
             </CardTitle>
           </CardTitleContainer>
@@ -81,7 +93,7 @@ const CardExperienceAEON = () => {
           React Native, TypeScript
         </CardInfo>
       </CardContainer>
-      <CardFooter>
+      <CardFooter style={{ color }}>
         Apr 2023 to present
       </CardFooter>
     </Card>

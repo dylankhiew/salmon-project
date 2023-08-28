@@ -30,7 +30,10 @@ const CARD_STACK: JSX.Element[] = [
 ];
 
 const CardStacks = () => {
-    const renderCard = (item: JSX.Element, index: number, items: JSX.Element[]) => {
+    const renderCard = (
+        item: JSX.Element,
+        index: number,
+    ) => {
         return (
             <TinderCard
                 key={`card-stack-${index + 1}`}
