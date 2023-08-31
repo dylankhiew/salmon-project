@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+# 🍣 The Salmon Project 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A project which provides a brief introduction about me and my work experience.
+Why salmon? Well, one day I suddenly thought of how beautiful the color palette for **salmon** is, thats when the idea popped up.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Libraries
 
-### `npm start`
+Created with Create React App (TypeScript template)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **styled-components** - Keeps the CSS neat and tidy as well as makes naming understandable.
+- **lottie-react** - Adds spices of animation to the project, makes it lively!
+- **react-icons** - Well you know, icons and stuff
+- **react-tinder-card** - This one game changer, does most of the heavy lifting for the card swiping animation.
+- **react-toggle** - Just for the dark/light mode toggle, so do utilise it!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Running it
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Feel like running it and see how it goes? It's pretty straight forward, just clone and run the commands:
 
-### `npm run build`
+```
+cd salmon-project
+yarn
+yarn start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+Thanks for the visit!
