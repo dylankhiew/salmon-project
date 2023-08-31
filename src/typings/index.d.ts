@@ -7,4 +7,10 @@ declare namespace Salmon {
     hasUserToggle: boolean;
     setHasUserToggle: (value: boolean) => void;
   }
+
+  interface CardContactConfig {
+    link: string;
+    title: string;
+    icon: import('react').ReactNode;
+  }
 }

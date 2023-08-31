@@ -1,26 +1,30 @@
 import styled from 'styled-components';
 import TinderCard from 'react-tinder-card';
 import { BsArrowCounterclockwise } from 'react-icons/bs';
+import {
+    RefObject, createRef, useMemo, useRef, useState,
+} from 'react';
 
+import { COLOR_CONSTANTS } from '../constants/colorConstants';
 import CardCover from './cards/CardCover';
 import CardProfile from './cards/CardProfile';
 import CardExperienceMoneyLion from './cards/CardExperienceMoneyLion';
 import CardExperienceAEON from './cards/CardExperienceAEON';
 import CardExperienceNaluri from './cards/CardExperienceNaluri';
-import { RefObject, createRef, useMemo, useRef, useState } from 'react';
-import { COLOR_CONSTANTS } from '../constants/colorConstants';
+import CardExperienceIntro from './cards/CardExperienceIntro';
+import CardPurpose from './cards/CardPurpose';
 
 const CardsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  justify-self: center;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-self: center;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    z-index: 100;
 `;
 
 const BackButton = styled.div`
@@ -47,20 +51,24 @@ const CARD_STACK: JSX.Element[] = [
     <CardExperienceMoneyLion />,
     <CardExperienceNaluri />,
     <CardExperienceAEON />,
+    <CardExperienceIntro />,
     <CardProfile />,
+    <CardPurpose />,
     <CardCover />,
 ];
 
 const CardStacks = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(CARD_STACK.length - 1);
+
     const currentIndexRef = useRef(currentIndex);
     const canGoBack = currentIndex < CARD_STACK.length - 1;
 
     const updateCurrentIndex = (value: number) => {
         setCurrentIndex(value);
         currentIndexRef.current = value;
-      }
+    };
  
+    // Unsure of the typings the library is using
     const childRefs: RefObject<any>[] = useMemo(
         () =>
           Array(CARD_STACK.length)
@@ -80,7 +88,7 @@ const CardStacks = () => {
 
             await childRefs[newIndex].current.restoreCard();
         }
-    }
+    };
 
     const renderBackButton = () => {
         if (canGoBack) {

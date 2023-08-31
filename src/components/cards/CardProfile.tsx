@@ -41,6 +41,7 @@ const CardImage = styled.img`
   height: 120px;
   border-radius: 100px;
   border: 1px solid ${COLOR_CONSTANTS.LIGHT.BACKGROUND};
+  pointer-events: none;
 `;
 
 const CardInfo = styled.div`

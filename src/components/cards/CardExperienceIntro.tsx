@@ -1,16 +1,10 @@
 import Card from '../Card';
-import salmon from '../../assets/salmon-icon.png';
 import { styled } from 'styled-components';
 import { SPACING } from '../../constants/spacingConstants';
 import { COLOR_CONSTANTS } from '../../constants/colorConstants';
 import { FONT_CONSTANTS } from '../../constants/fontConstants';
-
-const Image = styled.img`
-  width: 150px;
-  height: 150px;
-  opacity: 0.8;
-  pointer-events: none;
-`;
+import sittingWork from '../../assets/sitting-work.json';
+import Lottie from 'lottie-react';
 
 const CardContainer = styled.div`
   height: 100%;
@@ -33,14 +27,7 @@ const CardTitle = styled.div`
   text-align: center;
 `
 
-const CardSubtitle = styled.div`
-  font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
-  font-size: 14px;
-  font-weight: 300;
-  color: ${COLOR_CONSTANTS.GRAY};
-  text-align: center;
-`
-const CardImageContainer = styled.div`
+const LottieContainer = styled.div`
   flex: 1;
   margin-top: 48px;
   align-self: center;
@@ -56,28 +43,29 @@ const CardFooter = styled.div`
   margin-bottom: ${SPACING.S_1}px;
 `;
 
-const CardCover = () => {
-  return (
-    <Card backgroundColor={COLOR_CONSTANTS.LIGHT_SALMON} shouldRotate={false}>
+const CardExperienceIntro = () => (
+    <Card
+        backgroundColor={COLOR_CONSTANTS.PEACH}
+        shouldRotate={false}
+    >
         <CardContainer>
-          <CardTitleContainer>
+        <CardTitleContainer>
             <CardTitle>
-              Welcome
+                Work Experience
             </CardTitle>
-            <CardSubtitle>
-              to the <b>Salmon</b> Project
-            </CardSubtitle>
-          </CardTitleContainer>
-          <CardImageContainer>
-              <Image src={salmon} alt="sushi" />
-          </CardImageContainer>
-          <CardFooter>
-            by Dylan Khiew
-          </CardFooter>
+        </CardTitleContainer>
+        <LottieContainer>
+            <Lottie
+                animationData={sittingWork}
+                style={{ pointerEvents: 'none' }}
+            />
+        </LottieContainer>
+        <CardFooter>
+            est. 2019
+        </CardFooter>
         </CardContainer>
     </Card>
-  )
-};
+);
 
-export default CardCover;
+export default CardExperienceIntro;
 

@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import { useContext } from 'react';
 
 import Card from '../Card';
 import { SPACING } from '../../constants/spacingConstants';
-import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/themeContext';
 import cv from '../../assets/cv.pdf';
-import { BsEnvelopeAtFill, BsGithub, BsLinkedin, BsWhatsapp } from 'react-icons/bs';
+import {
+  BsEnvelopeAtFill, BsGithub, BsLinkedin, BsWhatsapp,
+} from 'react-icons/bs';
 import { COLOR_CONSTANTS } from '../../constants/colorConstants';
 import { FONT_CONSTANTS } from '../../constants/fontConstants';
 
@@ -69,10 +71,10 @@ const CardFooter = styled.a`
   font-size: 12px;
   font-weight: 300;
   text-decoration: none;
-`;
+`
 
 const CardContact = () => {
-  const { theme }= useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   const backgroundColor = theme === 'dark'
     ? COLOR_CONSTANTS.OFF_BLACK
@@ -85,6 +87,47 @@ const CardContact = () => {
   const cardInfoBackgroundColor = theme === 'dark'
     ? COLOR_CONSTANTS.DARK.BACKGROUND
     : COLOR_CONSTANTS.LIGHT.BACKGROUND;
+
+  const CARD_INFO: Salmon.CardContactConfig[] = [
+    {
+      link: 'https://www.linkedin.com/in/dylankhiew/',
+      title: 'LinkedIn',
+      icon: <BsLinkedin size={20} color={fontColor} />,
+    },
+    {
+      link: 'https://github.com/dylankhiew',
+      title: 'GitHub',
+      icon: <BsGithub size={20} color={fontColor} />,
+    },{
+      link: 'https://wa.me/601116759150',
+      title: 'WhatsApp',
+      icon: <BsWhatsapp size={20} color={fontColor} />,
+    },
+    {
+      link: 'mailto:dylankhiew@gmail.com',
+      title: 'Mail',
+      icon: <BsEnvelopeAtFill size={20} color={fontColor} />,
+    }
+  ];
+
+  const renderCardInfo = (
+    { link, title, icon }: Salmon.CardContactConfig,
+    index: number,
+  ): JSX.Element => {
+    return (
+      <CardInfo
+        key={`card-info-${index + 1}`}
+        style={{ backgroundColor: cardInfoBackgroundColor }}
+        href={link}
+        target="_blank"
+      >
+        {icon}
+        <CardInfoText style={{ color: fontColor}}>
+          {title}
+        </CardInfoText>
+      </CardInfo>
+    )
+  };
 
   return (
     <Card backgroundColor={backgroundColor} shouldRotate={false}>
@@ -99,32 +142,9 @@ const CardContact = () => {
             </CardTitle>
           </CardTitleContainer>
         </CardHeaderContainer>
-        <CardInfo style={{ backgroundColor: cardInfoBackgroundColor }} href='https://www.linkedin.com/in/dylankhiew/' about="_blank">
-          <BsLinkedin size={20} color={fontColor} />
-          <CardInfoText style={{ color: fontColor}}>
-            LinkedIn
-          </CardInfoText>
-        </CardInfo>
-        <CardInfo style={{ backgroundColor: cardInfoBackgroundColor }} href="https://github.com/dylankhiew" about="_blank">
-          <BsGithub size={20} color={fontColor} />
-          <CardInfoText style={{ color: fontColor}}>
-            GitHub
-          </CardInfoText>
-        </CardInfo>
-        <CardInfo style={{ backgroundColor: cardInfoBackgroundColor }} href="https://wa.me/601116759150" about="_blank">
-          <BsWhatsapp size={20} color={fontColor} />
-          <CardInfoText style={{ color: fontColor}}>
-            WhatsApp
-          </CardInfoText>
-        </CardInfo>
-        <CardInfo style={{ backgroundColor: cardInfoBackgroundColor }} href="mailto:dylankhiew@gmail.com" about="_blank">
-          <BsEnvelopeAtFill size={20} color={fontColor} />
-          <CardInfoText style={{ color: fontColor}}>
-            Mail
-          </CardInfoText>
-        </CardInfo>
+        {CARD_INFO.map(renderCardInfo)}
       </CardContainer>
-      <CardFooter href={cv} about='_blank' style={{ color: fontColor }}>
+      <CardFooter href={cv} target='_blank' style={{ color: fontColor }}>
         Download my resume here.
       </CardFooter>
     </Card>

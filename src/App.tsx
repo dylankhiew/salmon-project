@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { ThemeContext } from './contexts/themeContext';
 import Header from './components/Header';
 import CardStacks from './components/CardStacks';
-import './App.css';
 import background from './assets/background.jpg';
 import CardContact from './components/cards/CardContact';
 import { COLOR_CONSTANTS } from './constants/colorConstants';
+import './App.css';
 
 const MainContainer = styled.div`
   overflow: hidden;
@@ -71,9 +71,9 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-      // Set unscrollable
+      // This sets to make the body unscrollable
       document.body.style.overflow = "hidden";
-      // Initialise listener
+      // Initialise listeners for color scheme (Safari)
       colorSchemeQuery.addEventListener('change', updateColorScheme);
   }, [colorSchemeQuery, updateColorScheme]);
 
@@ -101,7 +101,7 @@ const App = () => {
   }, [documentThemeColor, hasUserToggle]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, hasUserToggle, setHasUserToggle }}>
+    <ThemeContext.Provider value={{ theme, hasUserToggle, setTheme, setHasUserToggle }}>
       <MainContainer style={generateThemeStyling()}>
         <BackgroundImage />
         <Header />
