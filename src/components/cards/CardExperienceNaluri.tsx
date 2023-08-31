@@ -87,7 +87,12 @@ const CardExperienceNaluri = () => {
           </CardTitleContainer>
         </CardHeaderContainer>
         <CardInfo>
-          <b>Summary</b>
+          <b>Company Background</b>
+          <br></br>
+          Naluri is a digital care provider and healthcare cost-containment solution.
+        </CardInfo>
+        <CardInfo>
+          <b>Description</b>
           <br></br>
           During my time in the mobile team, we worked on a roadmap initiative which includes a major design overhaul, enforcing TypeScript
           as well as implementing Relay as the new state management framework.

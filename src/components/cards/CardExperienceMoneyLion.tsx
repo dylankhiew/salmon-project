@@ -86,13 +86,15 @@ const CardExperienceMoneyLion = () => {
           </CardTitleContainer>
         </CardHeaderContainer>
         <CardInfo>
+          <b>Company Background</b>
+          <br></br>
+          MoneyLion is a leading digital financial services and lifestyle content platform
+        </CardInfo>
+        <CardInfo>
           <b>Summary</b>
           <br></br>
           Was part of the <b>Crypto</b> and <b>Banking</b> team where I was in charge of certain modules,
-          provided necessary guidance and implemented user stories in an agile environment.
-        </CardInfo>
-        <CardInfo>
-          Gained expensive core React Native knowledge during my time in the R&D team.
+          provided necessary guidance to juniors and implemented user stories in an agile environment.
         </CardInfo>
         <CardInfo>
           <b>Tech Stack</b>

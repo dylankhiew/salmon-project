@@ -76,15 +76,20 @@ const CardExperienceAEON = () => {
               Frontend Engineer
             </CardSubtitle>
             <CardTitle style={{ color }}>
-              ACS Digital
+              ACS Digital Berhad
             </CardTitle>
           </CardTitleContainer>
         </CardHeaderContainer>
         <CardInfo>
-          <b>Summary</b>
+          <b>Company Background</b>
+          <br></br>
+          Aeon Credit Service Digital are one of the five applicants who got the digital bank license in Malaysia.  
+        </CardInfo>
+        <CardInfo>
+          <b>Description</b>
           <br></br>
           Part of the pioneers in building the mobile-first digital bank for AEON. Day to day tasks 
-          includes enforcing best practises, building workflows, design system implementation as well as
+          includes enforcing best practises, building workflows, design system implementation, extensive documentations as well as
           handling pod-related matters in an agile-based team.
         </CardInfo>
         <CardInfo>
