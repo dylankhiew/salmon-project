@@ -58,7 +58,7 @@ const LottieContainer = styled.div`
     align-items: center;
     align-content: center;
     height: 90%;
-    opacity: 0.1;
+    opacity: 0.08;
     margin-left: ${SPACING.S_4}px;
     margin-right: ${SPACING.S_4}px;
 `;
@@ -115,7 +115,7 @@ const CardPurpose = () => {
                 Inspired by the color palette of <SalmonText>salmon</SalmonText> and cards one day and think let's make a site based on it!
             </CardInfo>
             <CardFooter style={{ color: fontColor }}>
-                Enjoy!
+                Happy swiping!
             </CardFooter>
         </CardContainer>
     </Card>
