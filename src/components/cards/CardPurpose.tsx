@@ -112,7 +112,7 @@ const CardPurpose = () => {
                 A website to briefly introduce myself and showcase my work experiences.
             </CardInfo>
             <CardInfo style={{ color: fontColor }}>
-                Inspired by the color palette of <SalmonText>salmon</SalmonText> and cards one day and think let's make a site based on it!
+                Inspired by flicking cards and the color palette of <SalmonText>salmon</SalmonText>. Figured let's make a website based on this!
             </CardInfo>
             <CardFooter style={{ color: fontColor }}>
                 Happy swiping!
