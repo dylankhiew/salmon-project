@@ -83,7 +83,7 @@ const CardExperienceAEON = () => {
         <CardInfo>
           <b>Company Background</b>
           <br></br>
-          Aeon Credit Service Digital are one of the five applicants who got the digital bank license in Malaysia.  
+          Aeon Credit Service Digital is one of the five applicants who got the digital bank license in Malaysia.  
         </CardInfo>
         <CardInfo>
           <b>Description</b>
