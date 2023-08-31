@@ -5,6 +5,7 @@ import { ThemeContext } from './contexts/themeContext';
 import Header from './components/Header';
 import CardStacks from './components/CardStacks';
 import background from './assets/background.jpg';
+import darkBackground from './assets/dark-background.jpg';
 import CardContact from './components/cards/CardContact';
 import { COLOR_CONSTANTS } from './constants/colorConstants';
 import './App.css';
@@ -20,7 +21,6 @@ const MainContainer = styled.div`
 `;
 
 const BackgroundImage = styled.div`
-  background-image: url(${background});
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -47,6 +47,10 @@ const App = () => {
 
   const [theme, setTheme] = useState<Salmon.ThemeType>('light');
   const [hasUserToggle, setHasUserToggle] = useState<boolean>(false);
+
+  const backgroundTheme: React.CSSProperties = theme === 'dark'
+    ?  { backgroundImage: `url(${darkBackground})`, opacity: 0.05 }
+    :  { backgroundImage: `url(${background})`, opacity: 0.2 };
 
   const generateThemeStyling = (): React.CSSProperties => {
     if (theme === 'dark') {
@@ -103,7 +107,7 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ theme, hasUserToggle, setTheme, setHasUserToggle }}>
       <MainContainer style={generateThemeStyling()}>
-        <BackgroundImage />
+        <BackgroundImage style={backgroundTheme} />
         <Header />
         <CardContactContainer>
           <CardContact />
