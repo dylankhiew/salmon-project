@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import { CARD_STACK_CONFIG } from '../../constants/appConstants';
 import Card from '../Card';
 import { SPACING } from '../../constants/spacingConstants';
 import { COLOR_CONSTANTS } from '../../constants/colorConstants';
@@ -11,9 +10,6 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-const CardTitleContainer = styled.div`
-`
 
 const CardTitle = styled.div`
   font-family: ${FONT_CONSTANTS.PLUS_JAKARTA_SANS};
@@ -28,20 +24,8 @@ const CardSubtitle = styled.div`
   font-weight: 300;
   color: ${COLOR_CONSTANTS.LIGHT.BACKGROUND};
 `
-const CardImageContainer = styled.div`
-  margin-top: 32px;
-  align-self: center;
-  padding: ${SPACING.S_2};
-  margin-bottom: 24px;
-`;
-
-const CardImage = styled.img`
-  opacity: 0.9;
-  width: 120px;
-  height: 120px;
-  border-radius: 100px;
-  border: 1px solid ${COLOR_CONSTANTS.LIGHT.BACKGROUND};
-  pointer-events: none;
+const CardSpacer = styled.div`
+  height: 108px;
 `;
 
 const CardInfo = styled.div`
@@ -59,20 +43,13 @@ const CardProfile = () => {
   return (
     <Card backgroundColor={COLOR_CONSTANTS.DARK_SALMON}>
       <CardContainer>
-        <CardTitleContainer>
           <CardSubtitle>
             Who this?
           </CardSubtitle>
           <CardTitle>
             Dylan Khiew
           </CardTitle>
-        </CardTitleContainer>
-        <CardImageContainer>
-          <CardImage
-            src={CARD_STACK_CONFIG.PROFILE_IMAGE_URL}
-            alt="Profile"
-          />
-        </CardImageContainer>
+        <CardSpacer />
         <CardInfo>
           More than four years of experience in mobile and software development, specialising in the <b>financial services</b> industry.
         </CardInfo>

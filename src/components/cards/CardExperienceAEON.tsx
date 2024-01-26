@@ -76,14 +76,14 @@ const CardExperienceAEON = () => {
               Frontend Engineer
             </CardSubtitle>
             <CardTitle style={{ color }}>
-              ACS Digital Berhad
+              AEON Bank
             </CardTitle>
           </CardTitleContainer>
         </CardHeaderContainer>
         <CardInfo>
           <b>Company Background</b>
           <br></br>
-          Aeon Credit Service Digital is one of the five applicants who got the digital bank license in Malaysia.  
+          AEON Bank is one of the five applicants who got the digital bank license in Malaysia.  
         </CardInfo>
         <CardInfo>
           <b>Description</b>
