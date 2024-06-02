@@ -5,6 +5,7 @@ import Card from '../Card';
 import { SPACING } from '../../constants/spacingConstants';
 import { ThemeContext } from '../../contexts/themeContext';
 import cv from '../../assets/cv.pdf';
+import cvDark from '../../assets/cv-dark.pdf';
 import {
   BsEnvelopeAtFill, BsGithub, BsLinkedin, BsWhatsapp,
 } from 'react-icons/bs';
@@ -75,18 +76,21 @@ const CardFooter = styled.a`
 
 const CardContact = () => {
   const { theme } = useContext(ThemeContext);
+  const isDarKTheme = theme === 'dark';
 
-  const backgroundColor = theme === 'dark'
+  const backgroundColor = isDarKTheme
     ? COLOR_CONSTANTS.OFF_BLACK
     : COLOR_CONSTANTS.OFF_WHITE;
 
-  const fontColor =  theme === 'dark'
+  const fontColor =  isDarKTheme
     ? COLOR_CONSTANTS.DARK.SUBTITLE
     : COLOR_CONSTANTS.LIGHT.SUBTITLE;
 
-  const cardInfoBackgroundColor = theme === 'dark'
+  const cardInfoBackgroundColor = isDarKTheme
     ? COLOR_CONSTANTS.DARK.BACKGROUND
     : COLOR_CONSTANTS.LIGHT.BACKGROUND;
+
+  const resumeFile = isDarKTheme ? cvDark : cv;
 
   const CARD_INFO: Salmon.CardContactConfig[] = [
     {
@@ -144,7 +148,7 @@ const CardContact = () => {
         </CardHeaderContainer>
         {CARD_INFO.map(renderCardInfo)}
       </CardContainer>
-      <CardFooter href={cv} target='_blank' style={{ color: fontColor }}>
+      <CardFooter href={resumeFile} target='_blank' style={{ color: fontColor }}>
         Download my resume here.
       </CardFooter>
     </Card>
